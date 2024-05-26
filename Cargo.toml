@@ -1,0 +1,57 @@
+[workspace]
+members = [
+    "crates/*",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Ulvetanna Team <ulvt_dev@ulvetanna.io>"]
+
+[workspace.dependencies]
+anyhow = "1.0.81"
+assert_matches = "1.5.0"
+bytemuck = { version = "1.14.0", features = ["derive", "min_const_generics", "must_cast"]}
+cfg-if = "1.0.0"
+criterion = { version = "0.4.0", features = ["real_blackbox"] }
+derive_more = "0.99.17"
+digest = "0.10.7"
+either = "1.11.0"
+ff = "0.13.0"
+getset = "0.1.2"
+groestl_crypto = { package = "groestl", version = "0.10.1" }
+hex-literal = "0.4.1"
+itertools = "0.12.0"
+log = "0.4.20"
+p3-challenger = { version = "0.1.0", git = "https://github.com/Plonky3/Plonky3", rev = "3f5fb24" }
+p3-matrix = { version = "0.1.0", git = "https://github.com/Plonky3/Plonky3", rev = "3f5fb24" }
+p3-symmetric = { version = "0.1.0", git = "https://github.com/Plonky3/Plonky3", rev = "3f5fb24" }
+p3-util = { version = "0.1.0", git = "https://github.com/Plonky3/Plonky3", rev = "3f5fb24" }
+proptest = "1.2.0"
+rand = "0.8.5"
+rayon = "1.8.0"
+seq-macro = "0.3.5"
+static_assertions = "1.1.0"
+subtle = "2.5.0"
+thiserror = "1.0.47"
+thread_local = "1.1.7"
+tiny-keccak = { version = "2.0.2", features = ["keccak"] }
+tracing = "0.1.38"
+tracing-profile = "0.3.0"
+tracing-subscriber = "0.3.18"
+transpose = "0.2.2"
+syn = { version = "2.0.60", features = ["full"] }
+quote = "1.0.36"
+proc-macro2 = "1.0.81"
+
+[profile.release]
+lto = "fat"
+
+[profile.profiling]
+inherits = "release"
+debug = true
+
+[profile.bench]
+inherits = "release"
+debug = true

@@ -2,7 +2,7 @@
 
 # Binius
 
-Implementations of the block-level testing based polynomial commitment scheme, and zero check optimised for small characteristic fields described in *[Succinct Arguments over Towers of Binary Fields](https://eprint.iacr.org/2023/1784)*. The field and utils crate have been taken as is from the original binius repo, developed by the team at [Irreducible](https://www.irreducible.com). The oracle used to simulate verifier challenges as a part of the Fiat-Shamir transform are specific to them. To do the Fiat-Shamir transform on a larger protocol using these as primitives would use a sponge.
+Implementations of the block-level testing based polynomial commitment scheme for small characteristic fields described in *[Succinct Arguments over Towers of Binary Fields](https://eprint.iacr.org/2023/1784)*. The field and utils crate have been taken as is from the original binius repo, developed by the team at [Irreducible](https://www.irreducible.com).
 ## License
 
 Copyright 2023-2024 Ulvetanna Inc.
